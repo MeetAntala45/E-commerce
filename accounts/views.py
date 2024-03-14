@@ -23,7 +23,7 @@ def SignupPage(request):
             my_user.save()
             return redirect('login')
 
-    return render (request,'signup.html')
+    return render (request,'accounts/signup.html')
 
 def LoginPage(request):
     if request.method=='POST':
@@ -35,7 +35,7 @@ def LoginPage(request):
             return redirect('home')
         else:
             messages.error(request, "Username or Password is incorrect!")
-    return render (request,'login.html')
+    return render (request,'accounts/login.html')
 
 def LogoutPage(request):
     logout(request)
